@@ -43,4 +43,8 @@ async function getHistoryHandler(request, h) {
 	return response;
 }
 
-module.exports = { postPredictHandler, getHistoryHandler };
+async function helloWorld(request, h) {
+	return "hello world";
+}
+
+module.exports = { postPredictHandler, getHistoryHandler, helloWorld };

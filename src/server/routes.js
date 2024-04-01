@@ -18,6 +18,11 @@ const routes = [
 		method: "GET",
 		handler: handler.getHistoryHandler,
 	},
+	{
+		path: "/",
+		method: "GET",
+		handler: handler.helloWorld,
+	},
 ];
 
 module.exports = routes;
