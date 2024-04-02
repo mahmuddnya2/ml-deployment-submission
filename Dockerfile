@@ -1,8 +1,9 @@
-FROM node:20.12.0
+FROM node
 
 WORKDIR /usr/src/app
-COPY package*.json ./
+
+COPY package.json ./
 RUN  npm install
 COPY  . .
 EXPOSE 8000
-CMD [ "node" ,"server.js" ]
+CMD [ "node","server.js" ]
