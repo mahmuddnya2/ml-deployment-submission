@@ -26,7 +26,7 @@ async function postPredictHandler(request, h) {
 		status: "success",
 		message:
 			confidenceScore > 50
-				? "Model is predicted successfully."
+				? "Model is predicted successfully"
 				: "Model is predicted successfully but under threshold. Please use the correct picture",
 		data,
 	});

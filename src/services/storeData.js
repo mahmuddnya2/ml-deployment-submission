@@ -1,16 +1,14 @@
 const { Firestore } = require("@google-cloud/firestore");
 
-async function storeData(id, data) {
-	const db = new Firestore();
+const db = new Firestore({ databaseId: "predictions" });
 
-	const predictCollection = db.collection("prediction");
+async function storeData(id, data) {
+	const predictCollection = db.collection("predictions");
 	return predictCollection.doc(id).set(data);
 }
 
 async function getData() {
-	const db = new Firestore();
-
-	const querySnapshot = await db.collection("prediction").get();
+	const querySnapshot = await db.collection("predictions").get();
 	const data = querySnapshot.docs.map((doc) => {
 		return { id: doc.id, history: doc.data() };
 	});
